@@ -44,4 +44,22 @@ window.addEventListener('scroll', function() {
       link.classList.add('active');
     }
   });
+  
+  // Add navbar background on scroll
+  const navbar = document.querySelector('.navbar');
+  if (window.pageYOffset > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });
+
+// Handle viewport height for mobile browsers (address bar considerations)
+const setVh = () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+
+window.addEventListener('resize', setVh);
+window.addEventListener('orientationchange', setVh);
+setVh();

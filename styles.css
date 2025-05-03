@@ -16,6 +16,7 @@ body {
   line-height: 1.7;
   color: #444;
   background-color: #FCFCFC;
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -257,14 +258,129 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 15px 0;
   }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 0 80px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .tool-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Small devices (landscape phones, tablets) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .navbar .navbar-collapse {
+    padding: 15px 0;
+  }
+  
   section {
     padding: 60px 0;
   }
+  
+  .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
   .about-img {
     margin-bottom: 30px;
+  }
+  
+  .projects .card {
+    margin-bottom: 30px;
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 575px) {
+  .hero {
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .btn-custom {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .skill-badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    margin: 3px;
+  }
+  
+  .contact-form .row > div:first-child input {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    padding: 30px 0;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .tool-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Fix for fixed navbar on mobile */
+body {
+  padding-top: 76px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+  }
+  .navbar {
+    background-color: transparent !important;
+    transition: all 0.3s;
+  }
+  .navbar.scrolled {
+    background-color: white !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   }
 }
