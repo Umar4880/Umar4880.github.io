@@ -17,7 +17,7 @@ html {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--dark);
+  color: var(--light);
   font-weight: 500;
   padding: 0.5rem 1rem;
   transition: all 0.3s;
