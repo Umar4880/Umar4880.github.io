@@ -1,0 +1,47 @@
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const target = document.querySelector(this.getAttribute('href'));
+    const navHeight = document.querySelector('.navbar').offsetHeight;
+    
+    window.scrollTo({
+      top: target.offsetTop - navHeight,
+      behavior: 'smooth'
+    });
+    
+    // Close mobile menu after clicking a link
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarCollapse.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  });
+});
+
+// Add active class to nav items when scrolling
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navHeight = document.querySelector('.navbar').offsetHeight;
+  
+  let current = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - navHeight - 10;
+    const sectionHeight = section.offsetHeight;
+    
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
