@@ -11,6 +11,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.navbar{
+    color: white;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
