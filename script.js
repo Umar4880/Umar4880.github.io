@@ -26,6 +26,7 @@ window.addEventListener('scroll', function() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
   const navHeight = document.querySelector('.navbar').offsetHeight;
+  const navbar = document.querySelector('.navbar');
   
   let current = '';
   
@@ -45,12 +46,26 @@ window.addEventListener('scroll', function() {
     }
   });
   
-  // Add navbar background on scroll
-  const navbar = document.querySelector('.navbar');
+  // Update navbar appearance based on scroll position
   if (window.pageYOffset > 50) {
     navbar.classList.add('scrolled');
+    navbar.classList.remove('transparent');
   } else {
     navbar.classList.remove('scrolled');
+    navbar.classList.add('transparent');
+  }
+});
+
+// Ensure the navbar has the correct class on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.navbar');
+  
+  if (window.pageYOffset > 50) {
+    navbar.classList.add('scrolled');
+    navbar.classList.remove('transparent');
+  } else {
+    navbar.classList.remove('scrolled');
+    navbar.classList.add('transparent');
   }
 });
 

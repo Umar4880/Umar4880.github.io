@@ -11,8 +11,48 @@ html {
   scroll-behavior: smooth;
 }
 
-.navbar{
-    color: white;
+/* Navbar specific styling */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--dark);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+/* Transparent navbar (for top of page) */
+.navbar.transparent {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.navbar.transparent .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar.transparent .navbar-nav .nav-link:hover,
+.navbar.transparent .navbar-nav .nav-link.active {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar.transparent .navbar-brand {
+  color: white;
+}
+
+.navbar.transparent .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar.transparent .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 body {
@@ -386,5 +426,15 @@ body {
   .navbar.scrolled {
     background-color: white !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  .navbar.scrolled .navbar-nav .nav-link {
+    color: var(--dark);
+  }
+  .navbar.scrolled .navbar-nav .nav-link:hover,
+  .navbar.scrolled .navbar-nav .nav-link.active {
+    color: var(--primary);
+  }
+  .navbar.scrolled .navbar-brand {
+    color: var(--dark);
   }
 }
