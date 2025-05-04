@@ -14,7 +14,6 @@ html {
 /* Navbar specific styling */
 .navbar {
   transition: all 0.3s ease;
-  padding: 15px 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -58,15 +57,14 @@ html {
 
 /* Mobile navbar fixes */
 @media (max-width: 991px) {
-  .navbar.transparent {
-    background-color: var(--primary) !important; /* Solid color for mobile */
+  /* .navbar.transparent {
+    background-color: #2C3ED7 !important; /* Solid color for mobile */
   }
-  
+   */
   .navbar .navbar-collapse {
     background-color: var(--primary);
     border-radius: 8px;
     padding: 15px;
-    margin-top: 10px;
   }
   
   .navbar.scrolled .navbar-collapse {
@@ -438,9 +436,6 @@ footer {
 }
 
 /* Fix for fixed navbar on mobile */
-body {
-  padding-top: 76px;
-}
 
 @media (min-width: 992px) {
   body {
